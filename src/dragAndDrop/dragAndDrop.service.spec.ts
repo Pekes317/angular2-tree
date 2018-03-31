@@ -1,5 +1,5 @@
-import {DragAndDrop} from './dragAndDrop.service';
-import {IDragElement, IDropElement} from '../interfaces/IDragAndDrop';
+import { DragAndDrop } from './dragAndDrop.service';
+import { IDragElement, IDropElement } from '../interfaces/IDragAndDrop';
 
 describe('DragAndDrop', () => {
   let service: DragAndDrop;
@@ -11,13 +11,13 @@ describe('DragAndDrop', () => {
 
     dragElement = {
       zoneId: 'tree',
-      data: {some: 'data'},
+      data: { some: 'data' },
       type: DragAndDrop.DROP_DATA_TYPE
     };
 
     dropElement = {
       zones: ['tree'],
-      data: {id: 'data-id'}
+      data: { id: 'data-id' }
     };
   });
 

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   IConfiguration,
   IContextMenu,
@@ -9,10 +9,10 @@ import {
   TreeModel,
   treeStateSelector
 } from '../../../../main';
-import {Store} from '@ngrx/store';
-import {Observable} from 'rxjs/Observable';
-import {TreeTwoNodeService} from './treeTwoNode.service';
-import {filter, map} from 'rxjs/operators';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
+import { TreeTwoNodeService } from './treeTwoNode.service';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-tree-two',
@@ -34,9 +34,9 @@ export class TreeTwoComponent implements OnInit {
   public treeModel: TreeModel;
 
   public constructor(private store: Store<ITreeState>,
-                     private treeActions: TreeActionsService,
-                     private nodeDispatcherService: NodeDispatcherService,
-                     private treeTwoNodeService: TreeTwoNodeService) {
+    private treeActions: TreeActionsService,
+    private nodeDispatcherService: NodeDispatcherService,
+    private treeTwoNodeService: TreeTwoNodeService) {
   }
 
   public ngOnInit() {

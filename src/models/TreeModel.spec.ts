@@ -1,7 +1,7 @@
-import {TreeModel} from './TreeModel';
-import {Observable} from 'rxjs/Observable';
-import {ITreeData} from '../store/ITreeState';
-import {IConfiguration} from '../interfaces/IConfiguration';
+import { TreeModel } from './TreeModel';
+import { Observable } from 'rxjs/Observable';
+import { ITreeData } from '../store/ITreeState';
+import { IConfiguration } from '../interfaces/IConfiguration';
 
 describe('TreeModel', () => {
   let treeModel: TreeModel;

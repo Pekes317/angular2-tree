@@ -1,5 +1,5 @@
-import {IOuterNode} from '../interfaces/IOuterNode';
-import {Action} from '@ngrx/store';
+import { IOuterNode } from '../interfaces/IOuterNode';
+import { Action } from '@ngrx/store';
 
 export interface ITreeData {
   [key: string]: IOuterNode;

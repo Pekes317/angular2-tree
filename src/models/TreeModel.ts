@@ -1,9 +1,9 @@
-import {IOuterNode} from '../interfaces/IOuterNode';
-import {Observable} from 'rxjs/Observable';
-import {IConfiguration} from '../interfaces/IConfiguration';
-import {ITreeData} from '../store/ITreeState';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-import {map} from 'rxjs/operators';
+import { IOuterNode } from '../interfaces/IOuterNode';
+import { Observable } from 'rxjs/Observable';
+import { IConfiguration } from '../interfaces/IConfiguration';
+import { ITreeData } from '../store/ITreeState';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { map } from 'rxjs/operators';
 
 export class TreeModel {
   public currentSelectedNode$: BehaviorSubject<IOuterNode> = new BehaviorSubject(null);
@@ -13,7 +13,7 @@ export class TreeModel {
   }
 
   public constructor(private nodes$: Observable<ITreeData>,
-                     public configuration: IConfiguration) {
+    public configuration: IConfiguration) {
     this.initConfiguration();
   }
 

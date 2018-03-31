@@ -1,10 +1,10 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {DropzoneComponent} from './dropzone.component';
-import {DragAndDrop} from '../dragAndDrop.service';
-import {TreeModel} from '../../models/TreeModel';
-import {IDragElement} from '../../interfaces/IDragAndDrop';
-import {TranslateModule} from 'ng2-translate';
+import { DropzoneComponent } from './dropzone.component';
+import { DragAndDrop } from '../dragAndDrop.service';
+import { TreeModel } from '../../models/TreeModel';
+import { IDragElement } from '../../interfaces/IDragAndDrop';
+import { TranslateModule } from 'ng2-translate';
 
 
 describe('DropzoneComponent', () => {
@@ -24,7 +24,7 @@ describe('DropzoneComponent', () => {
 
     notTreeDragElement = {
       type: 'NOT_TREE_NODE',
-      data: {some: 'data'},
+      data: { some: 'data' },
       zoneId: 'zone'
     };
 
@@ -43,7 +43,7 @@ describe('DropzoneComponent', () => {
     TestBed.configureTestingModule({
       imports: [TranslateModule.forRoot()],
       providers: [
-        {provide: DragAndDrop, useValue: dragAndDrop}
+        { provide: DragAndDrop, useValue: dragAndDrop }
       ],
       declarations: [DropzoneComponent]
     })

@@ -1,20 +1,20 @@
-import {ItemComponent} from './item.component';
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {TreeModel} from '../models/TreeModel';
-import {IOuterNode} from '../interfaces/IOuterNode';
-import {DraggableDirective} from '../dragAndDrop/draggable.directive';
-import {DroppableDirective} from '../dragAndDrop/droppable.directive';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {ITreeAction, ITreeData, ITreeState} from '../store/ITreeState';
-import {Store} from '@ngrx/store';
-import {TreeActionsService} from '../store/treeActions.service';
-import {ContextMenuService, IContextMenuClickEvent} from 'ngx-contextmenu';
-import {Actions} from '@ngrx/effects';
-import {Observable} from 'rxjs/Observable';
-import {DragAndDrop} from '../dragAndDrop/dragAndDrop.service';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {AnimationEvent} from '@angular/animations';
-import {Subject} from 'rxjs/Subject';
+import { ItemComponent } from './item.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TreeModel } from '../models/TreeModel';
+import { IOuterNode } from '../interfaces/IOuterNode';
+import { DraggableDirective } from '../dragAndDrop/draggable.directive';
+import { DroppableDirective } from '../dragAndDrop/droppable.directive';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ITreeAction, ITreeData, ITreeState } from '../store/ITreeState';
+import { Store } from '@ngrx/store';
+import { TreeActionsService } from '../store/treeActions.service';
+import { ContextMenuService, IContextMenuClickEvent } from 'ngx-contextmenu';
+import { Actions } from '@ngrx/effects';
+import { Observable } from 'rxjs/Observable';
+import { DragAndDrop } from '../dragAndDrop/dragAndDrop.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AnimationEvent } from '@angular/animations';
+import { Subject } from 'rxjs/Subject';
 
 describe('ItemComponent', () => {
   const TREE_ID = 'tree';
@@ -51,7 +51,7 @@ describe('ItemComponent', () => {
       children: []
     };
 
-    treeModelMock = new TreeModel(Observable.of(<ITreeData>{}), {disableContextMenu: true, isAnimation: false});
+    treeModelMock = new TreeModel(Observable.of(<ITreeData>{}), { disableContextMenu: true, isAnimation: false });
 
     TestBed.configureTestingModule({
       imports: [
@@ -60,11 +60,11 @@ describe('ItemComponent', () => {
         ReactiveFormsModule
       ],
       providers: [
-        {provide: Actions, useValue: actionsMock},
-        {provide: ContextMenuService, useValue: contextMenuServiceMock},
-        {provide: DragAndDrop, useValue: dragAndDropMock},
-        {provide: Store, useValue: storeMock},
-        {provide: TreeActionsService, useValue: treeActionServiceMock}
+        { provide: Actions, useValue: actionsMock },
+        { provide: ContextMenuService, useValue: contextMenuServiceMock },
+        { provide: DragAndDrop, useValue: dragAndDropMock },
+        { provide: Store, useValue: storeMock },
+        { provide: TreeActionsService, useValue: treeActionServiceMock }
       ],
       declarations: [
         ItemComponent,

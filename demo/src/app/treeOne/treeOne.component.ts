@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   IConfiguration,
   IContextMenu,
@@ -9,10 +9,10 @@ import {
   TreeModel,
   treeStateSelector
 } from '../../../../main';
-import {Store} from '@ngrx/store';
-import {Observable} from 'rxjs/Observable';
-import {TreeOneNodeService} from './treeOneNode.service';
-import {filter, map} from 'rxjs/operators';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
+import { TreeOneNodeService } from './treeOneNode.service';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-tree-one',
@@ -35,9 +35,9 @@ export class TreeOneComponent implements OnInit {
   public treeModel: TreeModel;
 
   public constructor(private store: Store<ITreeState>,
-                     private treeActions: TreeActionsService,
-                     private nodeDispatcherService: NodeDispatcherService,
-                     private nodeService: TreeOneNodeService) {
+    private treeActions: TreeActionsService,
+    private nodeDispatcherService: NodeDispatcherService,
+    private nodeService: TreeOneNodeService) {
   }
 
   public ngOnInit() {

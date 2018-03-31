@@ -1,7 +1,7 @@
-import {NodeService} from './node.service';
-import {Observable} from 'rxjs/Observable';
-import {IOuterNode} from '../interfaces/IOuterNode';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import { NodeService } from './node.service';
+import { Observable } from 'rxjs/Observable';
+import { IOuterNode } from '../interfaces/IOuterNode';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 describe('NodeService', () => {
   let service: NodeService;
@@ -46,7 +46,7 @@ describe('NodeService', () => {
       service.load('5')
         .subscribe(handler);
 
-      expect(http.get).toHaveBeenCalledWith('/api/nodes', {params});
+      expect(http.get).toHaveBeenCalledWith('/api/nodes', { params });
       expect(handler).toHaveBeenCalledWith(json);
     });
   });
@@ -62,7 +62,7 @@ describe('NodeService', () => {
       service.add(node, newParentId)
         .subscribe(handler);
 
-      expect(http.post).toHaveBeenCalledWith('/api/nodes', {node: node, parentNodeId: newParentId});
+      expect(http.post).toHaveBeenCalledWith('/api/nodes', { node: node, parentNodeId: newParentId });
       expect(handler).toHaveBeenCalledWith(newNode);
     });
   });
@@ -74,7 +74,7 @@ describe('NodeService', () => {
       service.move(node, targetNode)
         .subscribe(handler);
 
-      expect(http.put).toHaveBeenCalledWith('/api/nodes/move', {source: node.id, target: targetNode.id});
+      expect(http.put).toHaveBeenCalledWith('/api/nodes/move', { source: node.id, target: targetNode.id });
     });
   });
 
@@ -99,7 +99,7 @@ describe('NodeService', () => {
       service.remove(node.id)
         .subscribe(handler);
 
-      expect(http.delete).toHaveBeenCalledWith('/api/nodes', {params});
+      expect(http.delete).toHaveBeenCalledWith('/api/nodes', { params });
     });
   });
 });

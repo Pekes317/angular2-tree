@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {IOuterNode} from '../interfaces/IOuterNode';
-import {Action} from '@ngrx/store';
-import {ITreeAction} from './ITreeState';
+import { Injectable } from '@angular/core';
+import { IOuterNode } from '../interfaces/IOuterNode';
+import { Action } from '@ngrx/store';
+import { ITreeAction } from './ITreeState';
 
 @Injectable()
 export class TreeActionsService {

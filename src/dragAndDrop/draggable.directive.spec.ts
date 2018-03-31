@@ -1,9 +1,9 @@
-import {DraggableDirective} from './draggable.directive';
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {Component, DebugElement, Input} from '@angular/core';
-import {DragAndDrop} from './dragAndDrop.service';
-import {IOuterNode} from '../interfaces/IOuterNode';
-import {By} from '@angular/platform-browser';
+import { DraggableDirective } from './draggable.directive';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, DebugElement, Input } from '@angular/core';
+import { DragAndDrop } from './dragAndDrop.service';
+import { IOuterNode } from '../interfaces/IOuterNode';
+import { By } from '@angular/platform-browser';
 
 
 @Component({
@@ -37,7 +37,7 @@ describe('DraggableDirective', () => {
     TestBed.configureTestingModule({
       declarations: [FakeComponent, DraggableDirective],
       providers: [
-        {provide: DragAndDrop, useValue: dragAndDropMock}
+        { provide: DragAndDrop, useValue: dragAndDropMock }
       ]
     })
       .compileComponents();

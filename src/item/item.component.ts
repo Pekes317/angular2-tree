@@ -1,16 +1,16 @@
-import {AfterViewInit, Component, Input, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
-import {FormControl} from '@angular/forms';
-import {ContextMenuComponent, ContextMenuService} from 'ngx-contextmenu';
-import {IOuterNode} from '../interfaces/IOuterNode';
-import {TreeActionsService} from '../store/treeActions.service';
-import {Action, Store} from '@ngrx/store';
-import {ITreeAction, ITreeState} from '../store/ITreeState';
-import {Observable} from 'rxjs/Observable';
-import {TreeModel} from '../models/TreeModel';
-import {Actions} from '@ngrx/effects';
-import {animate, AnimationEvent, state, style, transition, trigger} from '@angular/animations';
-import {filter} from 'rxjs/operators';
-import {AnimationTriggerMetadata} from '@angular/animations/src/animation_metadata';
+import { AfterViewInit, Component, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { ContextMenuComponent, ContextMenuService } from 'ngx-contextmenu';
+import { IOuterNode } from '../interfaces/IOuterNode';
+import { TreeActionsService } from '../store/treeActions.service';
+import { Action, Store } from '@ngrx/store';
+import { ITreeAction, ITreeState } from '../store/ITreeState';
+import { Observable } from 'rxjs/Observable';
+import { TreeModel } from '../models/TreeModel';
+import { Actions } from '@ngrx/effects';
+import { animate, AnimationEvent, state, style, transition, trigger } from '@angular/animations';
+import { filter } from 'rxjs/operators';
+import { AnimationTriggerMetadata } from '@angular/animations/src/animation_metadata';
 
 export function expand(): AnimationTriggerMetadata {
   return trigger('isExpanded', [
@@ -74,9 +74,9 @@ export class ItemComponent implements OnInit, AfterViewInit {
 
 
   public constructor(protected store: Store<ITreeState>,
-                     protected treeActionsService: TreeActionsService,
-                     protected contextMenuService: ContextMenuService,
-                     protected actions$: Actions) {
+    protected treeActionsService: TreeActionsService,
+    protected contextMenuService: ContextMenuService,
+    protected actions$: Actions) {
     actions$
       .ofType(TreeActionsService.TREE_EXPAND_NODE)
       .pipe(

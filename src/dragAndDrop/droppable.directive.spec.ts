@@ -1,9 +1,9 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {Component, DebugElement, Input} from '@angular/core';
-import {DragAndDrop} from './dragAndDrop.service';
-import {IOuterNode} from '../interfaces/IOuterNode';
-import {By} from '@angular/platform-browser';
-import {DropConfig, DroppableDirective} from './droppable.directive';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, DebugElement, Input } from '@angular/core';
+import { DragAndDrop } from './dragAndDrop.service';
+import { IOuterNode } from '../interfaces/IOuterNode';
+import { By } from '@angular/platform-browser';
+import { DropConfig, DroppableDirective } from './droppable.directive';
 
 
 @Component({
@@ -55,7 +55,7 @@ describe('DroppableDirective', () => {
     TestBed.configureTestingModule({
       declarations: [FakeComponent, DroppableDirective],
       providers: [
-        {provide: DragAndDrop, useValue: dragAndDropMock}
+        { provide: DragAndDrop, useValue: dragAndDropMock }
       ]
     })
       .compileComponents();
@@ -88,7 +88,7 @@ describe('DroppableDirective', () => {
 
       spyOn(event, 'preventDefault');
 
-      dragAndDropMock.getLastDragElement.and.returnValue({data: dragElement, zoneId: ZONE_ID});
+      dragAndDropMock.getLastDragElement.and.returnValue({ data: dragElement, zoneId: ZONE_ID });
       $element.triggerEventHandler('dragover', event);
 
       expect($element.nativeElement.className.indexOf(DROP_CSS_CLASS) > -1).toBe(true);
@@ -106,7 +106,7 @@ describe('DroppableDirective', () => {
 
       spyOn(event, 'preventDefault');
 
-      dragAndDropMock.getLastDragElement.and.returnValue({data: dragElement, zoneId: 'other_zone'});
+      dragAndDropMock.getLastDragElement.and.returnValue({ data: dragElement, zoneId: 'other_zone' });
       $element.triggerEventHandler('dragover', event);
 
       expect($element.nativeElement.className.indexOf(DROP_CSS_CLASS) === -1).toBe(true);
@@ -132,7 +132,7 @@ describe('DroppableDirective', () => {
       const event = <MouseEvent>{
         type: 'drop'
       };
-      dragAndDropMock.getLastDragElement.and.returnValue({data: dragElement, zoneId: ZONE_ID});
+      dragAndDropMock.getLastDragElement.and.returnValue({ data: dragElement, zoneId: ZONE_ID });
 
       $element.triggerEventHandler('drop', event);
 
@@ -146,7 +146,7 @@ describe('DroppableDirective', () => {
       const event = <MouseEvent>{
         type: 'drop',
       };
-      dragAndDropMock.getLastDragElement.and.returnValue({data: dragElement, zoneId: 'othe-zone'});
+      dragAndDropMock.getLastDragElement.and.returnValue({ data: dragElement, zoneId: 'othe-zone' });
 
       $element.triggerEventHandler('drop', event);
 

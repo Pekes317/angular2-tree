@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {NodeService, IOuterNode} from '../../../../main';
-import {Observable} from 'rxjs/Observable';
-import {UUID} from 'angular2-uuid';
+import { Injectable } from '@angular/core';
+import { NodeService, IOuterNode } from '../../../../main';
+import { Observable } from 'rxjs/Observable';
+import { UUID } from 'angular2-uuid';
 
 @Injectable()
 export class TreeLocalStorageNodeService extends NodeService {

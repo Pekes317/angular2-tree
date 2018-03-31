@@ -1,8 +1,8 @@
-import {ITreeAction, ITreeData, ITreeState} from './ITreeState';
-import {TreeActionsService} from './treeActions.service';
-import {IOuterNode} from '../interfaces/IOuterNode';
-import {createFeatureSelector} from '@ngrx/store';
-import {MemoizedSelector} from '@ngrx/store/src/selector';
+import { ITreeAction, ITreeData, ITreeState } from './ITreeState';
+import { TreeActionsService } from './treeActions.service';
+import { IOuterNode } from '../interfaces/IOuterNode';
+import { createFeatureSelector } from '@ngrx/store';
+import { MemoizedSelector } from '@ngrx/store/src/selector';
 
 function copyState(state: ITreeState, treeId: string = null) {
   let newState = {};

@@ -1,12 +1,12 @@
-import {Injectable} from '@angular/core';
-import {Actions, Effect} from '@ngrx/effects';
-import {TreeActionsService} from './treeActions.service';
-import {IOuterNode} from '../interfaces/IOuterNode';
-import {Observable} from 'rxjs/Observable';
-import {ITreeAction, ITreeActionPayload} from './ITreeState';
-import {NodeDispatcherService} from '../service/nodesDispatcher.service';
-import {DragAndDrop} from '../dragAndDrop/dragAndDrop.service';
-import {catchError, filter, map, mergeMap, switchMap} from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { Actions, Effect } from '@ngrx/effects';
+import { TreeActionsService } from './treeActions.service';
+import { IOuterNode } from '../interfaces/IOuterNode';
+import { Observable } from 'rxjs/Observable';
+import { ITreeAction, ITreeActionPayload } from './ITreeState';
+import { NodeDispatcherService } from '../service/nodesDispatcher.service';
+import { DragAndDrop } from '../dragAndDrop/dragAndDrop.service';
+import { catchError, filter, map, mergeMap, switchMap } from 'rxjs/operators';
 import 'rxjs/add/observable/of';
 
 @Injectable()
@@ -84,8 +84,8 @@ export class TreeEffectsService {
     );
 
   constructor(private actions$: Actions,
-              private treeActions: TreeActionsService,
-              private nodeDispatcherService: NodeDispatcherService) {
+    private treeActions: TreeActionsService,
+    private nodeDispatcherService: NodeDispatcherService) {
   }
 
   protected deleteNode(treeId: string, node: IOuterNode): Observable<IOuterNode> {

@@ -1,9 +1,9 @@
-import {Component, Input} from '@angular/core';
-import {TreeModel} from '../../models/TreeModel';
-import {DragAndDrop} from '../dragAndDrop.service';
-import {IDragAndDrop, IDragElement} from '../../interfaces/IDragAndDrop';
-import {Observable} from 'rxjs/Observable';
-import {map} from 'rxjs/operators';
+import { Component, Input } from '@angular/core';
+import { TreeModel } from '../../models/TreeModel';
+import { DragAndDrop } from '../dragAndDrop.service';
+import { IDragAndDrop, IDragElement } from '../../interfaces/IDragAndDrop';
+import { Observable } from 'rxjs/Observable';
+import { map } from 'rxjs/operators';
 import 'rxjs/add/observable/merge';
 
 @Component({

@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import {IOuterNode} from '../interfaces/IOuterNode';
-import {IApiConfig} from '../IApiConfig.service';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { IOuterNode } from '../interfaces/IOuterNode';
+import { IApiConfig } from '../IApiConfig.service';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 export interface INodeService {
   load(nodeId: string): Observable<IOuterNode[]>;
@@ -32,7 +32,7 @@ export class NodeService implements INodeService {
   public load(nodeId = ''): Observable<IOuterNode[]> {
     const params = new HttpParams().set('nodeId', nodeId);
 
-    return this.http.get<IOuterNode[]>(this.getPath('GET', nodeId), {params});
+    return this.http.get<IOuterNode[]>(this.getPath('GET', nodeId), { params });
   }
 
 
@@ -47,7 +47,7 @@ export class NodeService implements INodeService {
     const srcId = srcNode.id;
     const targetId = targetNode ? targetNode.id : null;
 
-    return this.http.put<IOuterNode>(this.getPath('MOVE', srcId, targetId), {source: srcId, target: targetId});
+    return this.http.put<IOuterNode>(this.getPath('MOVE', srcId, targetId), { source: srcId, target: targetId });
   }
 
   public update(node: IOuterNode): Observable<IOuterNode> {
@@ -57,7 +57,7 @@ export class NodeService implements INodeService {
   public remove(nodeId: string): Observable<IOuterNode> {
     const params = new HttpParams().set('nodeId', nodeId);
 
-    return this.http.delete<IOuterNode>(this.getPath('REMOVE', nodeId), {params});
+    return this.http.delete<IOuterNode>(this.getPath('REMOVE', nodeId), { params });
   }
 
   protected getPath(type: string, nodeId: string, destNodeId: string = null) {

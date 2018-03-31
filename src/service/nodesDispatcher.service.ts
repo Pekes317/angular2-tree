@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {INodeService, NodeService} from './node.service';
+import { Injectable } from '@angular/core';
+import { INodeService, NodeService } from './node.service';
 
 @Injectable()
 export class NodeDispatcherService {

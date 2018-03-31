@@ -1,5 +1,5 @@
-import {NodeDispatcherService} from './nodesDispatcher.service';
-import {INodeService, NodeService} from './node.service';
+import { NodeDispatcherService } from './nodesDispatcher.service';
+import { INodeService, NodeService } from './node.service';
 
 describe('NodeDispatcherService', () => {
   const OTHER_SERVICE_NAME = 'other';

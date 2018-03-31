@@ -1,6 +1,6 @@
-import {Directive, ElementRef, Input, OnInit, Renderer} from '@angular/core';
-import {DragAndDrop} from './dragAndDrop.service';
-import {IOuterNode} from '../interfaces/IOuterNode';
+import { Directive, ElementRef, Input, OnInit, Renderer } from '@angular/core';
+import { DragAndDrop } from './dragAndDrop.service';
+import { IOuterNode } from '../interfaces/IOuterNode';
 
 export interface DropConfig {
   dropAllowedCssClass?: string;
@@ -33,7 +33,7 @@ export class DroppableDirective implements OnInit {
       this.toggleDropClass(false);
 
       if (this.isDropAllowed()) {
-        this.dragAndDrop.dragEnd({zones: this.dropConfig.dropZone, data: this.data});
+        this.dragAndDrop.dragEnd({ zones: this.dropConfig.dropZone, data: this.data });
       }
     });
   }
