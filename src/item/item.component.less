@@ -3,3 +3,16 @@
     background-color: rgba(255, 0, 0, 0.3);
   }
 }
+
+.tree-toggle {
+  transition: 100ms transform ease;
+  transform-origin: 50% 50%;
+
+  &.open {
+    transform: rotate(0deg) translateY(.75rem);
+  }
+
+  &.closed {
+    transform: rotate(-90deg) translateX(-.75rem);
+  }
+}

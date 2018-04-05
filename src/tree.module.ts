@@ -18,15 +18,17 @@ import { TranslateModule, TranslateService } from 'ng2-translate';
 import { HttpClientModule } from '@angular/common/http';
 import { ContextMenuModule } from 'ngx-contextmenu';
 import { treeReducer } from './store/treeReducer';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    ContextMenuModule,
+    ContextMenuModule.forRoot(),
+    FormsModule,
     DndModule,
     EffectsModule.forFeature([TreeEffectsService]),
     HttpClientModule,
-    FormsModule,
+    MaterialModule,
     ReactiveFormsModule,
     StoreModule.forFeature('trees', treeReducer),
     TranslateModule,

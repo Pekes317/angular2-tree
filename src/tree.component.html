@@ -1,17 +1,24 @@
 <div class="tree">
-  <button *ngIf="treeModel.configuration.showAddButton" class="btn btn-default" (click)="onAdd()">
-    <i class="fa fa-plus"></i> {{'RI_TREE_LBL_ADD_NODE' | translate}}
+  <button mat-raised-button *ngIf="treeModel.configuration.showAddButton" color="primary" (click)="onAdd()">
+    <mat-icon>add</mat-icon> {{'RI_TREE_LBL_ADD_NODE' | translate}}
   </button>
   <div #customTemplate><!-- no space --><ng-content></ng-content><!-- no space --></div>
   <div *ngIf="customTemplate.childNodes.length === 0"><ri-tree-item *ngFor="let node of treeModel.getRootNodes() | async" [node]="node" [treeModel]="treeModel"
                                                                     [contextMenu]="contextMenu"></ri-tree-item>
   </div>
   <ri-dropzone [treeModel]="treeModel"></ri-dropzone>
-  <context-menu #contextMenu>
+  <!-- <context-menu #contextMenu>
     <ng-template *ngFor="let menuItem of menuList" contextMenuItem let-item
               (execute)="onContextMenuClick(menuItem.name, $event.item)">
-      <span class="{{menuItem.iconCls}}" style="width: 20px; display: inline-block;"></span>
+      <mat-icon>{{menuItem.iconCls}}</mat-icon>
       {{menuItem.text | translate}}
     </ng-template>
-  </context-menu>
+  </context-menu> -->
+  <mat-menu #contextMenu="matMenu">
+    <button  mat-menu-item *ngFor="let menuItem of menuList"
+              (click)="onContextMenuClick(menuItem.name, $event)">
+      <mat-icon>{{menuItem.iconCls}}</mat-icon>
+      {{menuItem.text | translate}}
+  </button>
+  </mat-menu>
 </div>

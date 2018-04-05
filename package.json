@@ -80,6 +80,7 @@
     "karma-jasmine-html-reporter": "^1.0.0",
     "less": "^3.0.1",
     "ng2-inline-template": "^0.1.1",
+    "node-sass": "^4.8.3",
     "protractor": "~5.3.0",
     "rollup": "^0.57.1",
     "rollup-plugin-alias": "^1.4.0",

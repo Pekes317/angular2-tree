@@ -28,12 +28,12 @@ export class TreeComponent implements OnInit, OnChanges {
     {
       name: 'onEdit',
       text: 'RI_TREE_LBL_EDIT_NODE',
-      iconCls: 'fa fa-edit'
+      iconCls: 'edit'
     },
     {
       name: 'onDelete',
       text: 'RI_TREE_LBL_REMOVE_NODE',
-      iconCls: 'fa fa-trash'
+      iconCls: 'delete'
     }
   ];
 
@@ -72,18 +72,18 @@ export class TreeComponent implements OnInit, OnChanges {
    * @param node - data item
    */
   public onContextMenuClick(name: string, node: IOuterNode) {
-
-    switch (name) {
-      case 'onEdit':
-        event.stopPropagation();
-        this.store.dispatch(this.treeActions.editNodeStart(node));
-        break;
-      case 'onDelete':
-        this.store.dispatch(this.treeActions.deleteNode(this.treeModel.treeId, node));
-        break;
-      default:
-        console.warn('Unknown context menu action: ' + name);
-    }
+    console.log(name, node);
+    // switch (name) {
+    //   case 'onEdit':
+    //     event.stopPropagation();
+    //     this.store.dispatch(this.treeActions.editNodeStart(node));
+    //     break;
+    //   case 'onDelete':
+    //     this.store.dispatch(this.treeActions.deleteNode(this.treeModel.treeId, node));
+    //     break;
+    //   default:
+    //     console.warn('Unknown context menu action: ' + name);
+    // }
   }
 
   /**

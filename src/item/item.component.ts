@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatMenuTrigger } from '@angular/material/menu';
 import { ContextMenuComponent, ContextMenuService } from 'ngx-contextmenu';
 import { IOuterNode } from '../interfaces/IOuterNode';
 import { TreeActionsService } from '../store/treeActions.service';
@@ -39,6 +40,8 @@ export class ItemComponent implements OnInit, AfterViewInit {
    * Input field where we can change data name
    */
   @ViewChild('inputElement') input: any;
+  @ViewChild(MatMenuTrigger) contextMenuTrigger: MatMenuTrigger;
+
 
   /**
    * Node instance
@@ -57,7 +60,7 @@ export class ItemComponent implements OnInit, AfterViewInit {
   public isEditMode = false;
   public isSelected = false;
   public isExpanded = false;
-  public animationState = null;
+  public animationState = null;  
 
   public children$: Observable<IOuterNode[]>;
 
@@ -88,7 +91,7 @@ export class ItemComponent implements OnInit, AfterViewInit {
         this.expand();
       });
   }
-
+ 
   public ngAfterViewInit() {
     if (this.isEditMode) {
       this.setFocus();
@@ -132,20 +135,12 @@ export class ItemComponent implements OnInit, AfterViewInit {
 
   }
 
-  public collapse() {
-    if (this.treeModel.configuration.isAnimation) {
-      this.animationState = 'inactive';
-    } else {
-      this.isExpanded = false;
-    }
-  }
-
   public expand() {
+    this.isExpanded = !this.isExpanded;
     if (this.treeModel.configuration.isAnimation) {
-      this.animationState = 'active';
+      this.animationState = this.isExpanded ? 'active' : 'inactive';
     }
-
-    this.isExpanded = true;
+   
     this.store.dispatch(this.treeActionsService.loadTree(this.treeModel.treeId, this.node.id));
   }
 
@@ -185,13 +180,15 @@ export class ItemComponent implements OnInit, AfterViewInit {
   }
 
   public onContextMenu($event: MouseEvent) {
+    let folder = {
+      contextMenu: this.contextMenu,
+      event: $event,
+      item: this.node
+    };
     if (!this.treeModel.configuration.disableContextMenu) {
-      this.contextMenuService.show.next({
-        contextMenu: this.contextMenu,
-        event: $event,
-        item: this.node
-      });
+      this.contextMenuService.show.next(folder);
     }
+    this.contextMenuTrigger.openMenu();
 
     $event.preventDefault();
     $event.stopPropagation();

@@ -7,8 +7,8 @@
      [dropConfig]="{dropAllowedCssClass: 'drop-allowed', dropZone: treeModel.configuration.dropZone}"
      [data]="node"
 >
-  <i *ngIf="!isExpanded" (click)="expand()" class="fa fa-caret-right pointer"></i>
-  <i *ngIf="isExpanded" (click)="collapse()" class="fa fa-caret-down pointer"></i>
+  <span [matMenuTriggerFor]="contextMenu"></span>
+  <mat-icon (click)="expand()" [ngClass]="{ 'open': isExpanded, 'closed': !isExpanded }" class="tree-toggle pointer">arrow_drop_down</mat-icon>
   <span *ngIf="!isEditMode" class="tree-item-name" (click)="onSelect()">{{node.name}}</span>
   <form name="form">
     <input #inputElement type="text" class="form-control" *ngIf="isEditMode" [formControl]="nameField"
