@@ -1,6 +1,7 @@
 export * from './src/tree.module';
 export * from './src/tree.component';
 export * from './src/item/item.component';
+export * from './src/item/item.directive';
 export * from './src/models/TreeModel';
 export * from './src/interfaces/IAppConfig';
 export * from './src/interfaces/IConfiguration';
@@ -10,6 +11,7 @@ export * from './src/service/node.service';
 export * from './src/IApiConfig.service';
 export * from './src/store/treeActions.service';
 export * from './src/service/nodesDispatcher.service';
+export * from './src/service/tree-item.service';
 export * from './src/store/treeEffects.service';
 export * from './src/store/ITreeState';
 export * from './src/store/treeReducer'
