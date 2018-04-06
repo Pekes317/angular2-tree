@@ -72,7 +72,6 @@ export class TreeComponent implements OnInit, OnChanges {
    * @param node - data item
    */
   public onContextMenuClick(name: string, node: IOuterNode) {
-    console.log(name, node);
     switch (name) {
       case 'onEdit':
         event.stopPropagation();

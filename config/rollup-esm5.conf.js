@@ -45,7 +45,6 @@ export default {
     '@angular/platform-browser-dynamic',
     '@angular/router',
     '@angular/router-deprecated',
-    '@ngrx/core',
     '@ngrx/store',
     '@ngrx/store/src/selector',
     '@ngrx/effects',

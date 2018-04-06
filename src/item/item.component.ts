@@ -7,7 +7,7 @@ import { ContextMenuComponent, ContextMenuService } from 'ngx-contextmenu';
 import { IOuterNode } from '../interfaces/IOuterNode';
 import { TreeActionsService } from '../store/treeActions.service';
 import { Action, Store } from '@ngrx/store';
-import { ITreeAction, ITreeState } from '../store/ITreeState';
+import { ITreeAction, ITreeState, ITreeActionPayload } from '../store/ITreeState';
 import { Observable } from 'rxjs/Observable';
 import { TreeModel } from '../models/TreeModel';
 import { Actions } from '@ngrx/effects';
@@ -71,7 +71,7 @@ export class ItemComponent implements OnInit, AfterViewInit {
   protected insert$: Observable<Action> = this.actions$
     .ofType(TreeActionsService.TREE_INSERT_NODE)
     .pipe(
-      filter((action: ITreeAction) => {
+      filter((action: ITreeAction<ITreeActionPayload>) => {
         return action.payload && action.payload.id === this.node.id;
       })
     );
@@ -87,7 +87,7 @@ export class ItemComponent implements OnInit, AfterViewInit {
     actions$
       .ofType(TreeActionsService.TREE_EXPAND_NODE)
       .pipe(
-        filter((action: ITreeAction): boolean => {
+        filter((action: ITreeAction<ITreeActionPayload>): boolean => {
           return !this.isExpanded && action.payload.node && this.node.id === action.payload.node.id;
         })
       )
@@ -113,7 +113,7 @@ export class ItemComponent implements OnInit, AfterViewInit {
 
     this.insert$
       .pipe(
-        filter((action: ITreeAction) => {
+        filter((action: ITreeAction<ITreeActionPayload>) => {
           return Boolean(action.payload.id);
         })
       )
@@ -129,9 +129,9 @@ export class ItemComponent implements OnInit, AfterViewInit {
     this.actions$
       .ofType(TreeActionsService.TREE_EDIT_NODE_START)
       .pipe(
-        filter((action: ITreeAction) => action.payload.node === this.node)
+        filter((action: ITreeAction<ITreeActionPayload>) => action.payload.node === this.node)
       )
-      .subscribe((action: ITreeAction) => {
+      .subscribe((action: ITreeAction<ITreeActionPayload>) => {
         this.nameField.setValue(this.node.name);
         this.isEditMode = true;
         this.setFocus();

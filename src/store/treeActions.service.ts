@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IOuterNode } from '../interfaces/IOuterNode';
 import { Action } from '@ngrx/store';
-import { ITreeAction } from './ITreeState';
+import { ITreeAction, ITreeActionPayload } from './ITreeState';
 
 @Injectable()
 export class TreeActionsService {
@@ -23,7 +23,7 @@ export class TreeActionsService {
 
   static TREE_REGISTER = 'TREE_REGISTER';
 
-  public registerTree(treeId: string): ITreeAction {
+  public registerTree(treeId: string): ITreeAction<ITreeActionPayload> {
     return {
       type: TreeActionsService.TREE_REGISTER,
       payload: {
@@ -32,7 +32,7 @@ export class TreeActionsService {
     };
   }
 
-  public editNodeStart(node: IOuterNode): ITreeAction {
+  public editNodeStart(node: IOuterNode): ITreeAction<ITreeActionPayload> {
     return {
       type: TreeActionsService.TREE_EDIT_NODE_START,
       payload: {
@@ -42,7 +42,7 @@ export class TreeActionsService {
     };
   }
 
-  public saveNode(treeId: string, node: IOuterNode): ITreeAction {
+  public saveNode(treeId: string, node: IOuterNode): ITreeAction<ITreeActionPayload> {
     return {
       type: TreeActionsService.TREE_SAVE_NODE,
       payload: {
@@ -52,7 +52,7 @@ export class TreeActionsService {
     };
   }
 
-  public saveNodeSuccess(treeId: string, oldNode: IOuterNode, node: IOuterNode): ITreeAction {
+  public saveNodeSuccess(treeId: string, oldNode: IOuterNode, node: IOuterNode): ITreeAction<ITreeActionPayload> {
     return {
       type: TreeActionsService.TREE_SAVE_NODE_SUCCESS,
       payload: {
@@ -63,7 +63,7 @@ export class TreeActionsService {
     };
   }
 
-  public saveNodeError(treeId: string, node: IOuterNode): ITreeAction {
+  public saveNodeError(treeId: string, node: IOuterNode): ITreeAction<ITreeActionPayload> {
     return {
       type: TreeActionsService.TREE_SAVE_NODE_ERROR,
       payload: {
@@ -73,7 +73,7 @@ export class TreeActionsService {
     };
   }
 
-  public deleteNode(treeId: string, node: IOuterNode): ITreeAction {
+  public deleteNode(treeId: string, node: IOuterNode): ITreeAction<ITreeActionPayload> {
     return {
       type: TreeActionsService.TREE_DELETE_NODE,
       payload: {
@@ -83,7 +83,7 @@ export class TreeActionsService {
     };
   }
 
-  public expandNode(treeId: string, node: IOuterNode): ITreeAction {
+  public expandNode(treeId: string, node: IOuterNode): ITreeAction<ITreeActionPayload> {
     return {
       type: TreeActionsService.TREE_EXPAND_NODE,
       payload: {
@@ -93,7 +93,7 @@ export class TreeActionsService {
     };
   }
 
-  public deleteNodeSuccess(treeId: string, node: IOuterNode): ITreeAction {
+  public deleteNodeSuccess(treeId: string, node: IOuterNode): ITreeAction<ITreeActionPayload> {
     return {
       type: TreeActionsService.TREE_DELETE_NODE_SUCCESS,
       payload: {
@@ -103,7 +103,7 @@ export class TreeActionsService {
     };
   }
 
-  public deleteNodeError(treeId: string, node: IOuterNode): ITreeAction {
+  public deleteNodeError(treeId: string, node: IOuterNode): ITreeAction<ITreeActionPayload> {
     return {
       type: TreeActionsService.TREE_DELETE_NODE_ERROR,
       payload: {
@@ -113,7 +113,7 @@ export class TreeActionsService {
     };
   }
 
-  public insertNode(treeId: string, parentId: string | null): ITreeAction {
+  public insertNode(treeId: string, parentId: string | null): ITreeAction<ITreeActionPayload> {
     return {
       type: TreeActionsService.TREE_INSERT_NODE,
       payload: {
@@ -123,7 +123,7 @@ export class TreeActionsService {
     };
   }
 
-  public loadTree(treeId: string, id: string | null): ITreeAction {
+  public loadTree(treeId: string, id: string | null): ITreeAction<ITreeActionPayload> {
     return {
       type: TreeActionsService.TREE_LOAD,
       payload: {
@@ -133,7 +133,7 @@ export class TreeActionsService {
     };
   }
 
-  public loadTreeSuccess(treeId: string, id: string | null, nodes: IOuterNode[]): ITreeAction {
+  public loadTreeSuccess(treeId: string, id: string | null, nodes: IOuterNode[]): ITreeAction<ITreeActionPayload> {
     return {
       type: TreeActionsService.TREE_LOAD_SUCCESS,
       payload: {
@@ -144,7 +144,7 @@ export class TreeActionsService {
     };
   }
 
-  public loadTreeError(treeId: string, id: string | null): ITreeAction {
+  public loadTreeError(treeId: string, id: string | null): ITreeAction<ITreeActionPayload> {
     return {
       type: TreeActionsService.TREE_LOAD_ERROR,
       payload: {
@@ -154,7 +154,7 @@ export class TreeActionsService {
     };
   }
 
-  public moveNode(type: string, treeId: string, source: any, target: IOuterNode | null): ITreeAction {
+  public moveNode(type: string, treeId: string, source: any, target: IOuterNode | null): ITreeAction<ITreeActionPayload> {
     return {
       type: TreeActionsService.TREE_MOVE_NODE,
       payload: {
@@ -166,7 +166,7 @@ export class TreeActionsService {
     };
   }
 
-  public moveNodeSuccess(treeId: string, source: IOuterNode, target: IOuterNode): ITreeAction {
+  public moveNodeSuccess(treeId: string, source: IOuterNode, target: IOuterNode): ITreeAction<ITreeActionPayload> {
     return {
       type: TreeActionsService.TREE_MOVE_NODE_SUCCESS,
       payload: {
@@ -177,7 +177,7 @@ export class TreeActionsService {
     };
   }
 
-  public moveNodeError(treeId: string, source: IOuterNode, target: IOuterNode): ITreeAction {
+  public moveNodeError(treeId: string, source: IOuterNode, target: IOuterNode): ITreeAction<ITreeActionPayload> {
     return {
       type: TreeActionsService.TREE_MOVE_NODE_ERROR,
       payload: {

@@ -21,6 +21,6 @@ export interface ITreeActionPayload {
   sourceOfDroppedData?: string
 }
 
-export interface ITreeAction extends Action {
+export interface ITreeAction<ITreeActionPayload> extends Action {
   payload: ITreeActionPayload;
 }
