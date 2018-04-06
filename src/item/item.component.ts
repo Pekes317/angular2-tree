@@ -1,3 +1,5 @@
+import { animate, AnimationEvent, state, style, transition, trigger } from '@angular/animations';
+import { AnimationTriggerMetadata } from '@angular/animations/src/animation_metadata';
 import { AfterViewInit, Component, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatMenuTrigger } from '@angular/material/menu';
@@ -9,9 +11,10 @@ import { ITreeAction, ITreeState } from '../store/ITreeState';
 import { Observable } from 'rxjs/Observable';
 import { TreeModel } from '../models/TreeModel';
 import { Actions } from '@ngrx/effects';
-import { animate, AnimationEvent, state, style, transition, trigger } from '@angular/animations';
+import { IFolderNode } from '../interfaces/IFolderNode';
 import { filter } from 'rxjs/operators';
-import { AnimationTriggerMetadata } from '@angular/animations/src/animation_metadata';
+import { TreeItemService } from '../service/tree-item.service';
+
 
 export function expand(): AnimationTriggerMetadata {
   return trigger('isExpanded', [
@@ -60,7 +63,7 @@ export class ItemComponent implements OnInit, AfterViewInit {
   public isEditMode = false;
   public isSelected = false;
   public isExpanded = false;
-  public animationState = null;  
+  public animationState = null;
 
   public children$: Observable<IOuterNode[]>;
 
@@ -78,6 +81,7 @@ export class ItemComponent implements OnInit, AfterViewInit {
 
   public constructor(protected store: Store<ITreeState>,
     protected treeActionsService: TreeActionsService,
+    protected treeItemService: TreeItemService,
     protected contextMenuService: ContextMenuService,
     protected actions$: Actions) {
     actions$
@@ -91,7 +95,7 @@ export class ItemComponent implements OnInit, AfterViewInit {
         this.expand();
       });
   }
- 
+
   public ngAfterViewInit() {
     if (this.isEditMode) {
       this.setFocus();
@@ -140,7 +144,7 @@ export class ItemComponent implements OnInit, AfterViewInit {
     if (this.treeModel.configuration.isAnimation) {
       this.animationState = this.isExpanded ? 'active' : 'inactive';
     }
-   
+
     this.store.dispatch(this.treeActionsService.loadTree(this.treeModel.treeId, this.node.id));
   }
 
@@ -180,13 +184,15 @@ export class ItemComponent implements OnInit, AfterViewInit {
   }
 
   public onContextMenu($event: MouseEvent) {
-    let folder = {
+    let folder: IFolderNode = {
       contextMenu: this.contextMenu,
       event: $event,
       item: this.node
     };
+
     if (!this.treeModel.configuration.disableContextMenu) {
       this.contextMenuService.show.next(folder);
+      this.treeItemService.pickFolder(folder);
     }
     this.contextMenuTrigger.openMenu();
 

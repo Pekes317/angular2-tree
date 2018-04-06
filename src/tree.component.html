@@ -15,8 +15,8 @@
     </ng-template>
   </context-menu> -->
   <mat-menu #contextMenu="matMenu">
-    <button  mat-menu-item *ngFor="let menuItem of menuList"
-              (click)="onContextMenuClick(menuItem.name, $event)">
+    <button  mat-menu-item ri-tree-item *ngFor="let menuItem of menuList" 
+             (execute)="onContextMenuClick(menuItem.name, $event.item)">
       <mat-icon>{{menuItem.iconCls}}</mat-icon>
       {{menuItem.text | translate}}
   </button>

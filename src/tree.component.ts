@@ -73,17 +73,17 @@ export class TreeComponent implements OnInit, OnChanges {
    */
   public onContextMenuClick(name: string, node: IOuterNode) {
     console.log(name, node);
-    // switch (name) {
-    //   case 'onEdit':
-    //     event.stopPropagation();
-    //     this.store.dispatch(this.treeActions.editNodeStart(node));
-    //     break;
-    //   case 'onDelete':
-    //     this.store.dispatch(this.treeActions.deleteNode(this.treeModel.treeId, node));
-    //     break;
-    //   default:
-    //     console.warn('Unknown context menu action: ' + name);
-    // }
+    switch (name) {
+      case 'onEdit':
+        event.stopPropagation();
+        this.store.dispatch(this.treeActions.editNodeStart(node));
+        break;
+      case 'onDelete':
+        this.store.dispatch(this.treeActions.deleteNode(this.treeModel.treeId, node));
+        break;
+      default:
+        console.warn('Unknown context menu action: ' + name);
+    }
   }
 
   /**

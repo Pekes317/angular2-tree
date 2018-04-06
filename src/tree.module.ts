@@ -19,6 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContextMenuModule } from 'ngx-contextmenu';
 import { treeReducer } from './store/treeReducer';
 import { MaterialModule } from './material.module';
+import { TreeItemService } from './service/tree-item.service';
+import { TreeItemDirective } from './item/item.directive';
 
 @NgModule({
   imports: [
@@ -33,7 +35,7 @@ import { MaterialModule } from './material.module';
     StoreModule.forFeature('trees', treeReducer),
     TranslateModule,
   ],
-  declarations: [TreeComponent, ItemComponent, DraggableDirective, DroppableDirective, DropzoneComponent],
+  declarations: [TreeComponent, ItemComponent, TreeItemDirective, DraggableDirective, DroppableDirective, DropzoneComponent],
   exports: [TreeComponent, ItemComponent, DraggableDirective, DroppableDirective, DropzoneComponent, DraggableComponent, StoreModule, EffectsModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
@@ -47,7 +49,8 @@ export class TreeModule {
         NodeDispatcherService,
         NodeService,
         TreeActionsService,
-        TreeEffectsService
+        TreeEffectsService,
+        TreeItemService
       ]
     }
   }
