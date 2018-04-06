@@ -15,15 +15,15 @@ export class TreeEffectsService {
   @Effect() register$ = this.actions$
     .ofType(TreeActionsService.TREE_REGISTER)
     .pipe(
-      map((action: ITreeAction): ITreeAction => this.treeActions.loadTree(action.payload.treeId, null))
+      map((action: ITreeAction<ITreeActionPayload>): ITreeAction<ITreeActionPayload> => this.treeActions.loadTree(action.payload.treeId, null))
     );
 
   @Effect() load$ = this.actions$
     .ofType(TreeActionsService.TREE_LOAD)
     .pipe(
-      mergeMap((action: ITreeAction) => this.loadNodes(action.payload.treeId, action.payload.id)
+      mergeMap((action: ITreeAction<ITreeActionPayload>) => this.loadNodes(action.payload.treeId, action.payload.id)
         .pipe(
-          map((nodesData: IOuterNode[]): ITreeAction => this.treeActions.loadTreeSuccess(action.payload.treeId, action.payload.id, nodesData)),
+          map((nodesData: IOuterNode[]): ITreeAction<ITreeActionPayload> => this.treeActions.loadTreeSuccess(action.payload.treeId, action.payload.id, nodesData)),
           catchError(() => Observable.of(this.treeActions.loadTreeError(action.payload.treeId, action.payload.id)))
         )
       )
@@ -33,10 +33,10 @@ export class TreeEffectsService {
   @Effect() delete$ = this.actions$
     .ofType(TreeActionsService.TREE_DELETE_NODE)
     .pipe(
-      switchMap((action: ITreeAction) => this.deleteNode(action.payload.treeId, action.payload.node)
+      switchMap((action: ITreeAction<ITreeActionPayload>) => this.deleteNode(action.payload.treeId, action.payload.node)
         .pipe(
-          map((): ITreeAction => this.treeActions.deleteNodeSuccess(action.payload.treeId, action.payload.node)),
-          catchError((): Observable<ITreeAction> => Observable.of(this.treeActions.deleteNodeError(action.payload.treeId, action.payload.node)))
+          map((): ITreeAction<ITreeActionPayload> => this.treeActions.deleteNodeSuccess(action.payload.treeId, action.payload.node)),
+          catchError((): Observable<ITreeAction<ITreeActionPayload>> => Observable.of(this.treeActions.deleteNodeError(action.payload.treeId, action.payload.node)))
         )
       )
     );
@@ -45,9 +45,9 @@ export class TreeEffectsService {
   @Effect() save$ = this.actions$
     .ofType(TreeActionsService.TREE_SAVE_NODE)
     .pipe(
-      switchMap((action: ITreeAction) => this.saveNode(action.payload.treeId, action.payload.node)
+      switchMap((action: ITreeAction<ITreeActionPayload>) => this.saveNode(action.payload.treeId, action.payload.node)
         .pipe(
-          map((node: IOuterNode): ITreeAction => this.treeActions.saveNodeSuccess(action.payload.treeId, action.payload.node, node)),
+          map((node: IOuterNode): ITreeAction<ITreeActionPayload> => this.treeActions.saveNodeSuccess(action.payload.treeId, action.payload.node, node)),
           catchError(() => Observable.of(this.treeActions.saveNodeError(action.payload.treeId, action.payload.node)))
         )
       )
@@ -56,10 +56,10 @@ export class TreeEffectsService {
   @Effect() move$ = this.actions$
     .ofType(TreeActionsService.TREE_MOVE_NODE)
     .pipe(
-      filter((action: ITreeAction) => {
+      filter((action: ITreeAction<ITreeActionPayload>) => {
         return action.payload.sourceOfDroppedData === DragAndDrop.DROP_DATA_TYPE;
       }),
-      switchMap((action: ITreeAction) => this.moveNode(action.payload.treeId, action.payload.oldNode, action.payload.node)
+      switchMap((action: ITreeAction<ITreeActionPayload>) => this.moveNode(action.payload.treeId, action.payload.oldNode, action.payload.node)
         .pipe(
           map((node: IOuterNode): ITreeActionPayload => {
             return {
