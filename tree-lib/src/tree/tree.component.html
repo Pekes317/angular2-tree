@@ -1,0 +1,17 @@
+<div class="tree">
+  <button mat-raised-button *ngIf="treeModel.configuration.showAddButton" color="primary" (click)="onAdd()">
+    <mat-icon>add</mat-icon> {{'RI_TREE_LBL_ADD_NODE' | translate}}
+  </button>
+  <div #customTemplate><!-- no space --><ng-content></ng-content><!-- no space --></div>
+  <div *ngIf="customTemplate.childNodes.length === 0"><ri-tree-item *ngFor="let node of treeModel.getRootNodes() | async" [node]="node" [treeModel]="treeModel"
+                                                                    [contextMenu]="contextMenu"></ri-tree-item>
+  </div>
+  <ri-dropzone [treeModel]="treeModel"></ri-dropzone>
+  <mat-menu #contextMenu="matMenu">
+    <button  mat-menu-item ri-tree-item *ngFor="let menuItem of menuList" 
+             (execute)="onContextMenuClick(menuItem.name, $event.item)">
+      <mat-icon>{{menuItem.iconCls}}</mat-icon>
+      {{menuItem.text | translate}}
+  </button>
+  </mat-menu>
+</div>

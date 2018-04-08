@@ -1,0 +1,39 @@
+{
+  "name": "@rign/angular2-tree",
+  "version": "2.3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/qjon/angular2-tree.git"
+  },
+  "author": "Rafal Ignaszewski <rafal@ignaszewski.pl> http://ignaszewski.pl",
+  "license": "MIT",
+  "private": true,
+  "peerDependencies": {
+    "@angular/animations": "^5.2.9",
+    "@angular/cdk": "^5.2.4",
+    "@angular/common": "^5.2.9",
+    "@angular/core": "^5.2.9",
+    "@angular/forms": "^5.2.9",
+    "@angular/material": "^5.2.4",
+    "@angular/platform-browser": "^5.2.9",
+    "@angular/platform-browser-dynamic": "^5.2.9",
+    "@ngrx/effects": "^5.2.0",
+    "@ngrx/store": "^5.2.0",
+    "@ngrx/store-devtools": "^5.2.0",
+    "angular2-uuid": "^1.1.1",
+    "bootstrap": "^3.3.7",
+    "core-js": "^2.5.4",
+    "ng2-dnd": "^5.0.2",
+    "ng2-translate": "^5.0.0",
+    "rxjs": "^5.5.8",
+    "zone.js": "^0.8.25"
+  },
+  "ngPackage": {
+    "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
+    "workingDirectory": "../.ng_build",
+    "lib": {
+      "entryFile": "src/public_api.ts"
+    },
+    "dest": "../dist/angular2-tree"
+  }
+}

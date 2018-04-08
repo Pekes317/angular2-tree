@@ -5,7 +5,7 @@
   },
   "apps": [
     {
-      "root": "./demo/src",
+      "root": "src",
       "outDir": "./dist",
       "assets": [
         "assets",
@@ -14,13 +14,13 @@
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
-      "test": "../../src/test.ts",
+      "test": "test.ts",
       "tsconfig": "tsconfig.json",
-      "testTsconfig": "../../src/tsconfig.spec.json",
+      "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
         "styles.css",
-        "../../src/main.scss"
+        "../tree-lib/src/styles/main.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -53,6 +53,9 @@
   },
   "defaults": {
     "styleExt": "scss",
+    "build": {
+      "preserveSymlinks": true
+    },
     "component": {}
   }
 }
