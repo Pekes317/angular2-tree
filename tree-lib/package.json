@@ -21,7 +21,6 @@
     "@ngrx/store": "^5.2.0",
     "@ngrx/store-devtools": "^5.2.0",
     "angular2-uuid": "^1.1.1",
-    "bootstrap": "^3.3.7",
     "core-js": "^2.5.4",
     "ng2-dnd": "^5.0.2",
     "ng2-translate": "^5.0.0",
