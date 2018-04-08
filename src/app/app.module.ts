@@ -1,16 +1,18 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { LayoutModule } from '@angular/cdk/layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { DndModule } from 'ng2-dnd';
+import { TranslateModule, TranslateService } from 'ng2-translate';
+
 import { AppComponent } from './app.component';
 import { TreeOneModule } from './treeOne/treeOne.module';
 import { TreeTwoModule } from './treeTwo/treeTwo.module';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { TranslateModule, TranslateService } from 'ng2-translate';
-import { HttpClientModule } from '@angular/common/http';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TreeModule } from '../../tree-lib/src/tree.module';
-import { DndModule } from 'ng2-dnd';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { DndModule } from 'ng2-dnd';
     FormsModule,
     DndModule.forRoot(),
     HttpClientModule,
+    LayoutModule,
     TreeTwoModule,
     TreeOneModule,
     TreeModule.forRoot(),

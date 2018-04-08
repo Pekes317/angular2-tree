@@ -1,0 +1,21 @@
+.tree-layout {
+	display: flex;
+	
+}
+
+.tree-lg {
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.tree-sm {
+	flex-direction: column;
+}
+
+.tree-comp-lg {
+	width: 100%;
+}
+
+.tree-comp-sm {
+	width: 50%;
+}
