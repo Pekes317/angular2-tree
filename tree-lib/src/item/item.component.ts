@@ -34,7 +34,7 @@ export function expand(): AnimationTriggerMetadata {
   encapsulation: ViewEncapsulation.None,
   selector: 'ri-tree-item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.less'],
+  styleUrls: ['./item.component.scss'],
   animations: [expand()]
 })
 export class ItemComponent implements OnInit, AfterViewInit {

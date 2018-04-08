@@ -9,7 +9,7 @@ import 'rxjs/add/observable/merge';
 @Component({
   selector: 'ri-dropzone',
   templateUrl: './dropzone.component.html',
-  styleUrls: ['./dropzone.component.less']
+  styleUrls: ['./dropzone.component.scss']
 })
 export class DropzoneComponent {
   @Input() treeModel: TreeModel;

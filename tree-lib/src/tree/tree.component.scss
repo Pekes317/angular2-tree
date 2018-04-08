@@ -1,7 +1,7 @@
-@iconWidth: 8px;
-@colorHover: rgba(161, 197, 238, 0.2);
-@colorSelected: #549dee;
-@colorBorder: #4684ee;
+$iconWidth: 8px;
+$colorHover: rgba(161, 197, 238, 0.2);
+$colorSelected: #549dee;
+$colorBorder: #4684ee;
 
 .tree {
   list-style-type: none;
@@ -10,7 +10,7 @@
   position: relative;
   
   button:first-child {
-    margin-bottom: .75rem;
+    margin-bottom: 75rem;
   }
 
   .dropdown {
@@ -39,19 +39,19 @@
     &.tree-item-selected {
       > .tree-item-name {
         padding: 0 1px;
-        border: 1px solid @colorBorder;
-        background-color: @colorSelected;
+        border: 1px solid $colorBorder;
+        background-color: $colorSelected;
       }
     }
 
     i {
-      width: @iconWidth !important;
+      width: $iconWidth !important;
       text-align: center;
     }
 
     .no-children {
       display: inline-block;
-      width: @iconWidth;
+      width: $iconWidth;
     }
 
     .tree-item-name {
@@ -62,7 +62,7 @@
       cursor: pointer;
 
       &:hover {
-        background-color: @colorHover;
+        background-color: $colorHover;
 
         .tree-edit-btn, .tree-remove-btn {
           display: inline-block;

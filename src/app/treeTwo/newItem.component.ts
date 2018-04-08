@@ -4,7 +4,7 @@ import { ItemComponent } from '../../../tree-lib/src/public_api';
 @Component({
   selector: 'new-tree-item',
   templateUrl: './newItem.component.html',
-  styleUrls: ['./newItem.component.less']
+  styleUrls: ['./newItem.component.scss']
 })
 export class NewItemComponent extends ItemComponent {
   public onDelete($event: MouseEvent): void {

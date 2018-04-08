@@ -14,7 +14,7 @@ import { filter } from 'rxjs/operators';
   encapsulation: ViewEncapsulation.None,
   selector: 'ri-tree',
   templateUrl: './tree.component.html',
-  styleUrls: ['./tree.component.less']
+  styleUrls: ['./tree.component.scss']
 })
 export class TreeComponent implements OnInit, OnChanges {
   @Input() treeModel: TreeModel;
