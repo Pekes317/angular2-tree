@@ -6,7 +6,7 @@
     "url": "git+ssh://git@github.com/qjon/angular2-tree.git"
   },
   "author": "Rafal Ignaszewski <rafal@ignaszewski.pl> http://ignaszewski.pl",
-  "private": true,
+  "private": false,
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -16,7 +16,8 @@
     "build:lib": "rimraf dist && ng-packagr -p tree-lib/package.json",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "styles": "webpack webpack --config webpack.config.js"
   },
   "dependencies": {
     "@angular/animations": "^5.2.9",
@@ -51,6 +52,7 @@
     "codelyzer": "~4.2.1",
     "copyfiles": "^2.0.0",
     "cpx": "^1.5.0",
+    "css-loader": "^0.28.11",
     "gulp-inline-ng2-template": "^4.1.0",
     "jasmine-core": "~3.1.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -61,21 +63,10 @@
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-diff-reporter": "^1.1.1",
     "karma-jasmine-html-reporter": "^1.0.0",
-    "less": "^3.0.1",
     "ng-packagr": "^2.4.1",
     "ng2-inline-template": "^0.1.1",
     "node-sass": "^4.8.3",
     "protractor": "~5.3.1",
-    "rollup": "^0.57.1",
-    "rollup-plugin-alias": "^1.4.0",
-    "rollup-plugin-angular": "^0.5.3",
-    "rollup-plugin-angular-aot": "0.0.4",
-    "rollup-plugin-commonjs": "^9.1.0",
-    "rollup-plugin-node-builtins": "^2.1.2",
-    "rollup-plugin-node-globals": "^1.2.0",
-    "rollup-plugin-node-resolve": "^3.3.0",
-    "rollup-plugin-typescript": "^0.8.1",
-    "rollup-plugin-typescript2": "^0.12.0",
     "rxjs-es": "^5.0.0-beta.12",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",

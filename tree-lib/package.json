@@ -1,13 +1,13 @@
 {
-  "name": "@rign/angular2-tree",
+  "name": "@beezleeart/ngx-tree",
   "version": "2.3.0",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/qjon/angular2-tree.git"
+    "url": "git+ssh://git@github.com:Pekes317/angular2-tree.git"
   },
-  "author": "Rafal Ignaszewski <rafal@ignaszewski.pl> http://ignaszewski.pl",
+  "author": "Peter Mast",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "peerDependencies": {
     "@angular/animations": "^5.2.9",
     "@angular/cdk": "^5.2.4",
