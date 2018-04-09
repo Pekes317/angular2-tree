@@ -1,6 +1,6 @@
 {
   "name": "@beezleeart/ngx-tree",
-  "version": "2.3.0",
+  "version": "2.3.2",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:Pekes317/angular2-tree.git"
@@ -31,8 +31,14 @@
     "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
     "workingDirectory": "../.ng_build",
     "lib": {
-      "entryFile": "src/public_api.ts"
+      "entryFile": "src/public_api.ts",
+      "umdModuleIds": {
+        "@ngrx/store": "@ngrx/store",
+        "@ngrx/effects": "@ngrx/effects",
+        "ng2-dnd": "ng2-dnd",
+        "ng2-translate": "ng2-translate"
+      }
     },
-    "dest": "../dist/angular2-tree"
+    "dest": "../dist/ngx-tree"
   }
 }

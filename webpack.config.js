@@ -17,7 +17,7 @@ module.exports = {
   plugins: [
     // Specify output file name and path
     new ExtractTextPlugin({
-      filename: './dist/angular2-tree/style.css'
+      filename: './dist/ngx-tree/style.css'
     })
   ]
 };

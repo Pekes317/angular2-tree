@@ -13,11 +13,13 @@
     "start": "ng serve",
     "build": "ng build",
     "build:app": "cpr dist/angular2-tree src/@rign/lib && ng build --app packages && rimraf src/@rign",
-    "build:lib": "rimraf dist && ng-packagr -p tree-lib/package.json",
+    "build:lib": "rimraf dist && ng-packagr -p tree-lib/package.json && npm run styles && npm run readme",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "styles": "webpack webpack --config webpack.config.js"
+    "styles": "webpack webpack --config webpack.config.js",
+    "readme": "copyfiles ./package.README.md ./dist/ngx-tree/ && cd dist/ngx-tree && move package.README.md README.md",
+    "publish": "npm publish ./dist/ngx-tree"
   },
   "dependencies": {
     "@angular/animations": "^5.2.9",
@@ -63,6 +65,7 @@
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-diff-reporter": "^1.1.1",
     "karma-jasmine-html-reporter": "^1.0.0",
+    "renamer": "0.6.1",
     "ng-packagr": "^2.4.1",
     "ng2-inline-template": "^0.1.1",
     "node-sass": "^4.8.3",
