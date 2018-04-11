@@ -12,7 +12,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:app": "cpr dist/angular2-tree src/@rign/lib && ng build --app packages && rimraf src/@rign",
+    "build:app": "cpr dist/ngx-tree src/@beezleeart/lib && ng build --app packages && rimraf src/@beezleeart",
     "build:lib": "rimraf dist && ng-packagr -p tree-lib/package.json && npm run styles && npm run readme",
     "test": "ng test",
     "lint": "ng lint",
