@@ -2,7 +2,7 @@ import { IOuterNode } from '../interfaces/IOuterNode';
 import { Observable } from 'rxjs/Observable';
 import { IConfiguration } from '../interfaces/IConfiguration';
 import { ITreeData } from '../store/ITreeState';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export class TreeModel {

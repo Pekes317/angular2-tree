@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 
 import { IFolderNode } from '../interfaces/IFolderNode';
 

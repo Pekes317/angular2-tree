@@ -1,4 +1,6 @@
 import { Component, Input, OnChanges, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Store } from '@ngrx/store';
+
 import { IOuterNode } from '../interfaces/IOuterNode';
 import { IContextMenu } from '../interfaces/IContextMenu';
 import { TreeModel } from '../models/TreeModel';
@@ -6,7 +8,6 @@ import { DragAndDrop } from '../dragAndDrop/dragAndDrop.service';
 import { IDragAndDrop } from '../interfaces/IDragAndDrop';
 import { TreeActionsService } from '../store/treeActions.service';
 import { TreeItemService } from '../service/tree-item.service';
-import { Store } from '@ngrx/store';
 import { ITreeState } from '../store/ITreeState';
 import { filter } from 'rxjs/operators';
 

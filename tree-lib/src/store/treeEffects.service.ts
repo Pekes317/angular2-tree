@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { TreeActionsService } from './treeActions.service';
 import { IOuterNode } from '../interfaces/IOuterNode';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { ITreeAction, ITreeActionPayload } from './ITreeState';
 import { NodeDispatcherService } from '../service/nodesDispatcher.service';
 import { DragAndDrop } from '../dragAndDrop/dragAndDrop.service';

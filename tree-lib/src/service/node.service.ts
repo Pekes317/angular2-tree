@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { IOuterNode } from '../interfaces/IOuterNode';
 import { IApiConfig } from '../interfaces/IApiConfig';
 import { HttpClient, HttpParams } from '@angular/common/http';
