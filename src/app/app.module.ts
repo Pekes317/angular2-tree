@@ -6,8 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { DndModule } from 'ng2-dnd';
-import { TranslateModule, TranslateService } from 'ng2-translate';
 
 import { AppComponent } from './app.component';
 import { TreeOneModule } from './treeOne/treeOne.module';
