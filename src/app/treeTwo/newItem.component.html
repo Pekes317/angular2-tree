@@ -1,4 +1,4 @@
-<div class="tree-item row"
+<div class="tree-item"
      [ngClass]="{'tree-item-selected': isSelected}"
      riDroppable
      riDraggable
@@ -6,22 +6,26 @@
      [dropConfig]="{dropAllowedCssClass: 'drop-enabled', dropZone: treeModel.configuration.dropZone}"
      [data]="node"
 >
-  <div class="col-sm-8">
-    <i *ngIf="!isExpanded" (click)="expand()" class="fa fa-plus pointer"></i>
-    <i *ngIf="isExpanded" (click)="collapse()" class="fa fa-minus pointer"></i>
+  <div>
+    <button mat-icon-button *ngIf="!isExpanded" (click)="expand()">
+        <mat-icon>add</mat-icon>
+    </button>
+    <button mat-icon-button  *ngIf="isExpanded" (click)="expand()">
+        <mat-icon>remove</mat-icon>
+    </button>  
     <span *ngIf="!isEditMode" class="tree-item-name" (click)="onSelect()">{{node.name}}</span>
     <form name="form">
       <input #inputElement type="text" class="form-control" *ngIf="isEditMode" [formControl]="nameField"
              name="name" (keydown)="onChange($event)" (blur)="onBlur()"/>
     </form>
   </div>
-  <div class="col-sm-4 text-right">
-      <span class="btn-group btn-group-sm">
-        <button class="btn btn-primary" (click)="onEdit($event)" [disabled]="isEditMode">
-          <i class="fa fa-edit"></i>
+  <div>
+      <span>
+        <button mat-icon-button (click)="onEdit($event)" [disabled]="isEditMode">
+          <mat-icon>create</mat-icon>
         </button>
-        <button class="btn btn-danger" (click)="onDelete($event)" [disabled]="isEditMode">
-          <i class="fa fa-trash"></i>
+        <button mat-icon-button (click)="onDelete($event)" [disabled]="isEditMode">
+          <mat-icon>delete</mat-icon>
         </button>
       </span>
   </div>

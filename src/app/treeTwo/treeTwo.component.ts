@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
+import { filter, map } from 'rxjs/operators';
+
 import {
   IConfiguration,
   IContextMenu,
@@ -8,11 +12,8 @@ import {
   TreeActionsService,
   TreeModel,
   treeStateSelector
-} from '../../../tree-lib/src/public_api';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
+} from '../../../projects/ngx-tree/src/public_api';
 import { TreeTwoNodeService } from './treeTwoNode.service';
-import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-tree-two',

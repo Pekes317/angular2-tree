@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ItemComponent } from '../../../tree-lib/src/public_api';
+
+import { ItemComponent } from '../../../projects/ngx-tree/src/public_api';
 
 @Component({
   selector: 'new-tree-item',

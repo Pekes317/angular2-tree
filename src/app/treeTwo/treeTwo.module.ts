@@ -1,12 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TreeModule } from '../../../tree-lib/src/tree.module';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { MaterialModule, TreeModule } from '../../../projects/ngx-tree/src/public_api';
 import { TreeTwoComponent } from './treeTwo.component';
 import { NewItemComponent } from './newItem.component';
 import { TreeTwoNodeService } from './treeTwoNode.service';
 import { TreeLocalStorageModule } from '../localStorage/treeLocalStorage.module';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    MaterialModule,
     TreeLocalStorageModule,
     ReactiveFormsModule,
     TreeModule

@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   entry: [
     // Specify scss files
-    './tree-lib/src/styles/main.scss'
+    './projects/ngx-tree/src/lib/styles/main.scss'
   ],
   output: {
     filename: 'ngx-tree/style.css'

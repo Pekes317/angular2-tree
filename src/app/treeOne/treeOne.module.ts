@@ -1,10 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { TreeModule } from '../../../tree-lib/src/tree.module';
+import { BrowserModule } from '@angular/platform-browser';
+
 import { TreeOneNodeService } from './treeOneNode.service';
 import { TreeOneComponent } from './treeOne.component';
-import { HttpClientModule } from '@angular/common/http';
+import { TreeModule } from '../../../projects/ngx-tree/src/public_api';
 
 @NgModule({
   declarations: [TreeOneComponent],

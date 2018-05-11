@@ -12,7 +12,7 @@ import { DndModule } from 'ng2-dnd';
 import { AppComponent } from './app.component';
 import { TreeOneModule } from './treeOne/treeOne.module';
 import { TreeTwoModule } from './treeTwo/treeTwo.module';
-import { TreeModule } from '../../tree-lib/src/tree.module';
+import { MaterialModule, TreeModule } from '../../projects/ngx-tree/src/public_api';
 
 @NgModule({
   declarations: [
@@ -24,6 +24,7 @@ import { TreeModule } from '../../tree-lib/src/tree.module';
     DndModule.forRoot(),
     HttpClientModule,
     LayoutModule,
+    MaterialModule,
     TreeTwoModule,
     TreeOneModule,
     TreeModule.forRoot(),
