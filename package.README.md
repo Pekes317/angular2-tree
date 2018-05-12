@@ -7,3 +7,14 @@ This version of the package also uses Google's Material Design icons instead of 
 ### Update News
 
 * Update Angular to Angular 6.0
+* Requires a Feature Module with that below imports
+
+~~~~ @NgModule({
+  imports: [
+    CommonModule,
+    EffectsModule.forFeature([TreeEffectsService]),
+    StoreModule.forFeature('trees', treeReducer),
+  ],
+  declarations: []
+})
+export class FolderModule { } ~~~~

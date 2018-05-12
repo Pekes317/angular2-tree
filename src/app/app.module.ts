@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { TreeOneModule } from './treeOne/treeOne.module';
 import { TreeTwoModule } from './treeTwo/treeTwo.module';
 import { MaterialModule, TreeModule } from '../../projects/ngx-tree/src/public_api';
+import { FolderModule } from './folder/folder.module';
 
 @NgModule({
   declarations: [
@@ -20,16 +21,17 @@ import { MaterialModule, TreeModule } from '../../projects/ngx-tree/src/public_a
   ],
   imports: [
     BrowserAnimationsModule,
-    FormsModule,
     DndModule.forRoot(),
+    EffectsModule.forRoot([]),
+    FolderModule,
+    FormsModule,
     HttpClientModule,
     LayoutModule,
     MaterialModule,
     TreeTwoModule,
     TreeOneModule,
     TreeModule.forRoot(),
-    TranslateModule.forRoot(),
-    EffectsModule.forRoot([]),
+    TranslateModule.forRoot(),   
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument()
   ],

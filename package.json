@@ -1,6 +1,6 @@
 {
   "name": "@beezleeart/ngx-tree",
-  "version": "2.3.8",
+  "version": "2.3.9",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/qjon/angular2-tree.git"
@@ -13,12 +13,11 @@
     "start": "ng serve",
     "build": "ng build",
     "build:app": "cpr dist/ngx-tree src/@beezleeart/lib && ng build --app packages && rimraf src/@beezleeart",
-    "build:lib": "rimraf dist && ng build ngx-tree-lib && npm run styles && npm run readme",
-    "build:prod": "rimraf dist && ng build ngx-tree-lib --prod && npm run styles && npm run readme",
+    "build:lib": "rimraf dist && ng build ngx-tree-lib && npm run readme",
+    "build:prod": "rimraf dist && ng build ngx-tree-lib --prod && npm run readme",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "styles": "webpack --config webpack.config.js",
     "readme": "copyfiles ./package.README.md ./dist/ngx-tree/ && cd dist/ngx-tree && move package.README.md README.md",
     "publish": "npm publish ./dist/ngx-tree"
   },

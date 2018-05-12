@@ -1,6 +1,6 @@
 {
   "name": "@beezleeart/ngx-tree",
-  "version": "2.3.8",
+  "version": "2.3.9",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/qjon/angular2-tree.git"
