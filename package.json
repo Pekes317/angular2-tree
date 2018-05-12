@@ -18,7 +18,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "styles": "webpack webpack --config webpack.config.js",
+    "styles": "webpack --config webpack.config.js",
     "readme": "copyfiles ./package.README.md ./dist/ngx-tree/ && cd dist/ngx-tree && move package.README.md README.md",
     "publish": "npm publish ./dist/ngx-tree"
   },
