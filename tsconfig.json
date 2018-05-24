@@ -17,8 +17,8 @@
       "dom"
     ],
     "paths": {
-      "bill": [
-        "dist/bill"
+      "ngx-tree": [
+        "dist/ngx-tree"
       ]
     }
   }

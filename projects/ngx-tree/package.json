@@ -1,6 +1,6 @@
 {
   "name": "@beezleeart/ngx-tree",
-  "version": "2.3.10",
+  "version": "2.3.11",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/qjon/angular2-tree.git"
@@ -17,14 +17,14 @@
     "@angular/material": "^^6.0.0-rc.0 || ^6.0.1",
     "@angular/platform-browser": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/platform-browser-dynamic": "^6.0.0-rc.0 || ^6.0.0",
-    "@ngrx/effects": "^5.2.0",
-    "@ngrx/store": "^5.2.0",
-    "@ngrx/store-devtools": "^5.2.0",
+    "@ngrx/effects": "^6.0.1",
+    "@ngrx/store": "^6.0.1",
+    "@ngrx/store-devtools": "^6.0.1",
     "@ngx-translate/core": "^10.0.1",
     "angular2-uuid": "^1.1.1",
     "core-js": "^2.5.4",
     "ng2-dnd": "^5.0.2",
-    "rxjs": "^5.5.8",
+    "rxjs": "^6.1.0",
     "zone.js": "^0.8.25"
   }
 }
